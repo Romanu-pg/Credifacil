@@ -1,55 +1,136 @@
-# Tech Ecommerce Platform
 
-A full-stack CRUD Laravel and ReactJs E-Commerce platform with a secure authentication system using Laravel Sanctum, with the admin dashboard.
+💰 Credifacil - Plataforma de Préstamos en Línea
 
-![tech_ecommerce](https://user-images.githubusercontent.com/58397095/167276083-2b5504d1-3c2a-426c-a2c9-459573e10606.png)
+Credifacil es una aplicación financiera que agiliza el proceso de solicitud y administración de préstamos. Su objetivo es ofrecer soluciones de financiamiento rápidas, accesibles y sin complicaciones. Diseñada para eliminar los trámites tradicionales, Credifacil permite a los usuarios gestionar préstamos desde una plataforma digital confiable, segura e intuitiva.
 
-![adminDashboard](https://user-images.githubusercontent.com/58397095/167276092-3fc8f602-aa80-4d31-977f-956e5bb0bf0c.PNG)
+Desde la solicitud hasta el seguimiento de pagos, los usuarios pueden controlar todo en tiempo real. La experiencia se enfoca en la transparencia, la velocidad y la simplicidad, acercando el acceso al crédito a más personas.
+🚀 Tecnologías utilizadas
+Backend
 
+    Node.js: Entorno de ejecución para JavaScript en el servidor
 
-## Getting Started
+    Express: Framework web rápido y minimalista
 
-1. Clone the repo: `git clone https://github.com/itsmar1/tech-ecommerce.git`
-2. cd to `server` folder, create and fill in `.env` file. See `.env.example`
-3. Set your MySQL Databse keys
-4. Set your Amazon S3 keys
-3. Migrate db: `php artisan migrate`
-5. Install frontend dependencies: `cd client && npm install`
-6. Open up two command prompts. In one, run `php artisan serve` to start your backend server, in the other prompt run `npm start` to start the front end.
+    SQL Server Developer Edition: Base de datos relacional robusta
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Sequelize (opcional): ORM para Node.js y SQL Server
 
+    JWT: Autenticación basada en tokens
 
-### Prerequisites
+    dotenv: Gestión de variables de entorno
 
-* **TECHSHOP** backend uses [Composer](https://getcomposer.org) to manage its dependencies. So, before using it, make sure you have Composer installed on your machine.
-* [Node.js](https://nodejs.org) needs to be installed on your computer to manage the frontend dependencies.
-* Install [XAMPP](https://www.apachefriends.org/index.html) on your PC, launch the Xampp Control Panel, click on the Apache and MySql start buttons. Open a browser, copy and paste the url `http://localhost/dashboard/` then click on the phpMyAdmin tab. You should see the phpMyAdmin panel, click on the database tab in order to create a new database.
+Frontend
 
+    React 19: Biblioteca para construir interfaces de usuario
 
-## Tech Stack
+    TypeScript: Tipado estático para JavaScript
 
-* [Laravel](https://laravel.com/docs/8.x/) - The backend php framework used
-* [React](https://reactjs.org/) - The frontend framework used
-* [Redux](https://react-redux.js.org/) - State management
-* [Laravel Sanctum](https://laravel.com/docs/8.x/sanctum) - Authentication system
-* [Tailwind](https://tailwindcss.com/) - CSS framework
-* [MySQL](https://www.mysql.com/) - Database
-* [Amazon S3](https://aws.amazon.com/s3/) - Object storage
+    React Router: Navegación de múltiples páginas
 
+    Axios: Cliente HTTP para comunicarse con la API
 
-## Live Demo
-* Click [HERE](https://techshopecom.herokuapp.com) for demo
-* Admin => email: `admin@techshop.com` | password: admin
-* Client => email: `client@techshop.com` | password: client
+Arquitectura
 
+    API RESTful: Comunicación estandarizada entre frontend y backend
 
-## Author
+    Modelo MVC en backend: Separación de controladores, modelos y servicios
 
-[**Marwan Ahal**](https://www.soymarwan.com/)
+    Patrón de componentes reutilizables en frontend
 
+🛠️ Requisitos previos
 
-## License
+Asegúrate de tener instalado:
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+    Node.js 18+
+
+    SQL Server Developer Edition
+
+    Git
+
+🔧 Instalación del proyecto
+1. Clona el repositorio
+
+git clone https://github.com/tuusuario/Credifacil.git
+cd Credifacil
+
+⚙️ Backend - Node.js + SQL Server
+1. Instala las dependencias
+
+cd backend
+npm install
+
+2. Configura el entorno
+
+Copia el archivo .env.example a .env y agrega tus variables de entorno:
+
+cp .env.example .env
+# Edita el archivo .env con tus credenciales de base de datos, puerto, clave JWT, etc.
+
+3. Ejecuta el servidor
+
+npm run dev
+
+El backend estará disponible en: http://localhost:3000
+🌐 Frontend - React
+1. Instala las dependencias
+
+cd frontend
+npm install
+
+2. Ejecuta el servidor de desarrollo
+
+npm run dev
+
+El frontend estará disponible en: http://localhost:5173
+📁 Estructura del proyecto
+
+Credifacil/
+│
+├── backend/                  # Código del backend (Node.js)
+│   ├── controllers/          # Controladores de rutas
+│   ├── models/               # Modelos de base de datos (con Sequelize o raw)
+│   ├── routes/               # Rutas de la API
+│   ├── services/             # Lógica de negocio
+│   ├── config/               # Configuración de BD y JWT
+│   ├── middleware/           # Autenticación y validación
+│   ├── .env.example          # Variables de entorno ejemplo
+│   ├── app.js                # Configuración principal
+│   └── server.js             # Punto de entrada
+│
+├── frontend/                 # Código del frontend (React)
+│   ├── src/
+│   │   ├── components/       # Componentes reutilizables
+│   │   ├── pages/            # Vistas principales
+│   │   ├── services/         # Conexión con la API
+│   │   ├── router/           # Enrutador de páginas
+│   │   └── App.tsx           # Componente principal
+│   ├── public/
+│   └── vite.config.ts        # Configuración de Vite
+│
+└── README.md                 # Documentación del proyecto
+
+📦 Características principales
+
+    Solicitud de préstamos en línea
+
+    Validación de usuarios y autenticación segura
+
+    Consulta de estado de préstamos y pagos
+
+    Panel de control para gestión de cuenta
+
+    Notificaciones sobre vencimientos
+
+    Interfaz intuitiva y responsiva
+
+🔄 Actualización de dependencias
+Backend
+
+npm install nueva-libreria
+
+Frontend
+
+npm install nuevo-paquete
+
+🚧 Este proyecto está en desarrollo activo. ¡Contribuciones y sugerencias son bienvenidas!
 
