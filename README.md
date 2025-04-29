@@ -1,30 +1,27 @@
-# 🧠 MARU - Medical Analysis and Reporting Unit
+# 💸 Credifacil - Plataforma de Préstamos Ágil y Segura
 
-MARU es una aplicación de salud que permite a los usuarios gestionar aspectos importantes de su bienestar, como el monitoreo de glucosa, planificación de menús saludables, recordatorios de medicamentos y más. La aplicación incluye un asistente de IA que ofrece recomendaciones personalizadas y menús adaptados a las necesidades específicas de cada usuario.
+Credifacil es una aplicación financiera full-stack que permite a los usuarios solicitar préstamos monetarios de forma rápida, sencilla y sin los trámites burocráticos tradicionales. La plataforma ofrece una experiencia centrada en el usuario con un enfoque en la transparencia, velocidad y accesibilidad.
 
 ---
 
 ## 🚀 Tecnologías utilizadas
 
 ### Backend
-- **Python 3.10+** 
-- **FastAPI**: Framework moderno para APIs con validación automática
-- **SQLAlchemy**: ORM para manipulación de base de datos
-- **Pydantic**: Validación de datos y settings
-- **JWT**: Autenticación basada en tokens
-- **OpenAI API**: Integración con IA para recomendaciones personalizadas
+- **Node.js**: Entorno de ejecución para JavaScript en el servidor.
+- **Express**: Framework minimalista para construir APIs RESTful.
+- **SQL Server Developer**: Base de datos relacional robusta y escalable.
+- **JWT**: Sistema de autenticación segura mediante tokens.
+- **Dotenv**: Gestión de variables de entorno.
 
 ### Frontend
-- **React 19**: Biblioteca JavaScript para interfaces de usuario
-- **TypeScript**: Tipado estático para JavaScript
-- **Material UI 7**: Componentes de interfaz con diseño Material
-- **React Router 7**: Manejo de rutas en la aplicación
-- **Axios**: Cliente HTTP para peticiones a la API
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario reactivas.
+- **Axios**: Cliente HTTP para consumir servicios del backend.
+- **React Router**: Manejo de rutas dentro de la SPA (Single Page Application).
+- **Tailwind CSS**: Framework de CSS utilitario para estilos rápidos y personalizados.
 
 ### Arquitectura
-- **Modelo MVC en backend**: Controllers, services, models y schemas
-- **Patrón MVVM en frontend**: Models, Views, ViewModels
-- **API RESTful**: Comunicación estandarizada entre frontend y backend
+- **Modelo MVC en backend**: Separación en controladores, servicios y modelos.
+- **API RESTful**: Comunicación estandarizada entre frontend y backend.
 
 ---
 
@@ -32,8 +29,8 @@ MARU es una aplicación de salud que permite a los usuarios gestionar aspectos i
 
 Asegúrate de tener instalado:
 
-- **Python 3.10+**
-- **Node.js 18.0.0+ y npm**
+- **Node.js 18.0.0+**
+- **SQL Server Developer Edition**
 - **Git**
 
 ---
@@ -42,188 +39,109 @@ Asegúrate de tener instalado:
 
 ### 1. Clona el repositorio
 ```bash
-git clone https://github.com/tuusuario/MARU.git
-cd MARU
+git clone https://github.com/tuusuario/credifacil.git
+cd credifacil
 ```
 
 ---
 
-## ⚙️ Backend - FastAPI
+## ⚙️ Backend - Node.js + Express
 
-### 1. Crea y activa un entorno virtual (Windows)
-```bash
-cd backend
-python -m venv venv
-venv\Scripts\activate
-```
-
-### 2. Configuración del entorno
-Copia el archivo `.env.example` a `.env` y configura tus variables de entorno:
+### 1. Configura las variables de entorno
+Copia el archivo `.env.example` a `.env` y edítalo con tus credenciales:
 ```bash
 cp .env.example .env
-# Edita el archivo .env con tus configuraciones
+# Edita .env con tus configuraciones
 ```
 
-### 3. Instala las dependencias
+### 2. Instala las dependencias
 ```bash
-pip install -r requirements.txt
+cd backend
+npm install
 ```
 
-### 4. Inicializa la base de datos y ejecuta el servidor
+### 3. Ejecuta las migraciones y corre el servidor
 ```bash
-python run.py
+npm run migrate
+npm run dev
 ```
 
-El servidor estará disponible en: http://localhost:8000
-
-La documentación de la API estará en: http://localhost:8000/docs
+El servidor estará disponible en: `http://localhost:5000`
 
 ---
 
-## 🌐 Frontend - React + Vite
+## 🌐 Frontend - React
 
-### 1. Entra a la carpeta del frontend e instala dependencias
+### 1. Instala las dependencias
 ```bash
 cd frontend
 npm install
 ```
 
-### 2. Ejecuta el servidor de desarrollo
+### 2. Corre el servidor de desarrollo
 ```bash
 npm run dev
 ```
 
-El frontend estará disponible en: http://localhost:5173
+El frontend estará disponible en: `http://localhost:5173`
 
 ---
 
 ## 📁 Estructura del proyecto
 
 ```
-MARU/
+credifacil/
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── middlewares/
+│   └── app.js
 │
-├── backend/                      # Código del backend con FastAPI
-│   ├── .env.example              # Plantilla para variables de entorno
-│   ├── app/                      # Aplicación principal
-│   │   ├── core/                 # Funcionalidades centrales
-│   │   │   ├── config.py         # Configuración de la aplicación
-│   │   │   ├── database.py       # Configuración de la base de datos
-│   │   │   ├── init_db.py        # Inicialización de la BD con datos de prueba
-│   │   │   └── security.py       # Autenticación y seguridad
-│   │   │
-│   │   ├── models/               # Modelos de la base de datos (SQLAlchemy)
-│   │   │   ├── base_model.py     # Modelo base para herencia
-│   │   │   ├── glucose.py        # Modelo para lecturas de glucosa
-│   │   │   ├── menu.py           # Modelo para menús y comidas
-│   │   │   ├── reminder.py       # Modelo para recordatorios
-│   │   │   └── user.py           # Modelo de usuarios
-│   │   │
-│   │   ├── routes/               # Endpoints de la API
-│   │   │   ├── auth.py           # Rutas de autenticación
-│   │   │   ├── glucose.py        # Rutas para gestión de glucosa
-│   │   │   ├── health.py         # Rutas para recomendaciones de salud
-│   │   │   ├── menu.py           # Rutas para menús
-│   │   │   ├── reminders.py      # Rutas para recordatorios
-│   │   │   └── users.py          # Rutas de gestión de usuarios
-│   │   │
-│   │   ├── schemas/              # Esquemas Pydantic para validación
-│   │   │   ├── glucose.py        # Esquemas para lecturas de glucosa
-│   │   │   ├── health.py         # Esquemas para datos de salud
-│   │   │   ├── menu.py           # Esquemas para menús
-│   │   │   ├── reminder.py       # Esquemas para recordatorios
-│   │   │   └── user.py           # Esquemas para usuarios
-│   │   │
-│   │   ├── services/             # Lógica de negocio
-│   │   │   ├── ai_service.py     # Servicio de IA para recomendaciones
-│   │   │   ├── glucose_service.py # Servicio para gestión de glucosa
-│   │   │   ├── reminder_service.py # Servicio para recordatorios
-│   │   │   └── user_service.py   # Servicio para gestión de usuarios
-│   │   │
-│   │   └── main.py               # Punto de entrada de la aplicación
-│   │
-│   ├── requirements.txt          # Dependencias del backend
-│   └── run.py                    # Script para iniciar la aplicación
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── views/
+│   │   ├── services/
+│   │   └── App.jsx
+│   └── index.html
 │
-├── frontend/                     # Código del frontend con React
-│   ├── public/                   # Archivos estáticos
-│   ├── src/                      # Código fuente
-│   │   ├── assets/               # Imágenes y recursos
-│   │   ├── router/               # Configuración de rutas
-│   │   │   └── AppRouter.tsx     # Router principal
-│   │   │
-│   │   ├── services/             # Servicios para comunicación con la API
-│   │   │   ├── apiClient.tsx     # Cliente HTTP configurado
-│   │   │   └── authService.tsx   # Servicio de autenticación
-│   │   │
-│   │   ├── viewmodels/           # ViewModels para lógica de UI
-│   │   │   └── hooks/            # Custom hooks de React
-│   │   │       └── useAuth.tsx   # Hook para gestión de autenticación
-│   │   │
-│   │   ├── views/                # Componentes de vista
-│   │   │   ├── Dashboard/        # Vista principal
-│   │   │   ├── GlucoseTracker/   # Seguimiento de glucosa
-│   │   │   ├── Legal/            # Términos y condiciones
-│   │   │   ├── Login/            # Autenticación
-│   │   │   ├── MenuPlanner/      # Planificador de menús
-│   │   │   ├── Profile/          # Perfil de usuario
-│   │   │   ├── Reminders/        # Gestión de recordatorios
-│   │   │   └── common/           # Componentes comunes
-│   │   │       └── layout/       # Layouts compartidos
-│   │   │
-│   │   ├── App.tsx               # Componente principal
-│   │   └── main.tsx              # Punto de entrada
-│   │
-│   ├── package.json              # Dependencias del frontend
-│   └── vite.config.ts            # Configuración de Vite
-│
-└── README.md                     # Documentación del proyecto
+└── README.md
 ```
 
 ---
 
-## 📦 Características principales
+## 📦 Funcionalidades clave
 
-### Seguimiento de Glucosa
-- Registro de lecturas con fecha, hora y contexto (antes/después de comidas)
-- Visualización de tendencias y estadísticas
-- Alertas configurables para niveles anormales
-
-### Planificador de Menú Saludable
-- Recomendaciones personalizadas basadas en perfil de salud
-- Biblioteca de comidas y alimentos con información nutricional
-- Generación de menús semanales con IA
-
-### Sistema de Recordatorios
-- Recordatorios para medicación, lecturas de glucosa, ejercicio y más
-- Notificaciones configurables (email, push, SMS)
-- Repeticiones personalizables (diaria, semanal, mensual)
-
-### Perfil de Usuario
-- Registro de información médica personal
-- Seguimiento de IMC y métricas de salud
-- Contactos de emergencia
-
-### Inteligencia Artificial
-- Recomendaciones personalizadas basadas en datos de salud
-- Generación de dietas adaptadas a condiciones específicas
-- Respuestas a consultas sobre salud
+- Registro y autenticación de usuarios
+- Solicitud y gestión de préstamos
+- Historial de transacciones
+- Seguimiento de pagos y estado del préstamo
+- Interfaz intuitiva y responsiva
 
 ---
 
 ## 🔄 Actualización de dependencias
 
 ### Backend
-Si añades nuevas librerías con `pip install`, actualiza el archivo `requirements.txt`:
-
 ```bash
-pip freeze > requirements.txt
+npm install nueva-dependencia
 ```
 
 ### Frontend
-Para añadir nuevas dependencias:
-
 ```bash
-npm install nombre-paquete
+npm install nueva-dependencia
 ```
 
-> 🚧 Este proyecto está en desarrollo activo. ¡Gracias por colaborar!
+---
+
+## 👨‍💻 Autor
+
+**[Tu nombre o equipo de desarrollo]**
+
+---
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
