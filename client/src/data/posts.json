@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "user": "Americo Zuzunaga",
+        "time": "Today at 12:34 PM",
+        "title": "Morning Travel",
+        "distance": "3.18mi",
+        "averagePace": "7:34/mi",
+        "image": "https://placehold.co/600x200"
+    },
+    {
+        "id": 2,
+        "user": "Americo Zuzunaga",
+        "time": "Yesterday at 9:15 AM",
+        "title": "Evening Travel",
+        "distance": "4.25mi",
+        "averagePace": "8:12/mi",
+        "image": "https://placehold.co/600x200"
+    },
+    {
+        "id": 3,
+        "user": "Americo Zuzunaga",
+        "time": "Two days ago at 7:00 AM",
+        "title": "Long Run",
+        "distance": "10.5mi",
+        "averagePace": "9:00/mi",
+        "image": "https://placehold.co/600x200"
+    }
+]

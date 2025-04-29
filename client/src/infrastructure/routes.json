@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "name": "Ocean's edge",
+      "distance": "29.12 mi",
+      "elevation": "976 ft",
+      "time": "Est. Moving Time 3:01:04",
+      "createdAt": "Created on April 12, 2018",
+      "gpxFile": "/Ruta_a_Villahermosa.gpx"
+    },
+    {
+      "id": 2,
+      "name": "Marin",
+      "distance": "22.24 mi",
+      "elevation": "2,857 ft",
+      "time": "Est. Moving Time 2:43:08",
+      "createdAt": "Created on April 12, 2018",
+      "gpxFile": "/path/to/marin.gpx"
+    },
+    {
+      "id": 3,
+      "name": "Commute back",
+      "distance": "3.80 mi",
+      "elevation": "68 ft",
+      "time": "Est. Moving Time 0:25:46",
+      "createdAt": "Created on April 12, 2018",
+      "gpxFile": "/path/to/commute-back.gpx"
+    },
+    {
+      "id": 4,
+      "name": "Commute there",
+      "distance": "3.98 mi",
+      "elevation": "104 ft",
+      "time": "Est. Moving Time 0:26:14",
+      "createdAt": "Created on April 12, 2018",
+      "gpxFile": "/path/to/commute-there.gpx"
+    }
+  ]
+  

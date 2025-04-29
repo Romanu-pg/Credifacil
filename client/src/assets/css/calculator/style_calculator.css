@@ -1,0 +1,172 @@
+.calculator-container {
+  background-color: hsl(189, 41%, 97%);
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 10px;
+  padding-top: 0px !important;
+  width: 350px;
+}
+.calculator-container .result-screen {
+  background-color: hsl(183, 93%, 32%);
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 10px;
+  padding-top: 10px;
+  width: 325px;
+}
+ .calculator-container .result-screen .screen-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+ .calculator-container .result-screen .screen-row .text-container {
+  display: flex;
+  flex-direction: column;
+}
+ .calculator-container .result-screen .screen-row .text-container .heading {
+  color: hsl(0, 0%, 100%);
+  font-size: 18px;
+  font-weight: 700;
+}
+ .calculator-container .result-screen .screen-row .text-container .subheading {
+  color: hsl(186, 14%, 43%);
+  font-size: 14px;
+}
+ .calculator-container .result-screen .screen-row .result-calculator {
+  color: hsl(172, 67%, 45%);
+  font-size: 32px;
+  font-weight: 700;
+}
+ .calculator-container .result-screen .reset-calculator {
+  background-color: hsl(172, 67%, 45%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control-calculator {
+  display: flex;
+  flex-direction: column;
+  max-width: 325px;
+  padding-top: 10px;
+}
+.form-control-calculator .error-control {
+  display: flex;
+  flex-direction: column;
+}
+.form-control-calculator .error-control .label-calculator {
+  color: hsl(186, 14%, 43%);
+  font-size: 14px;
+}
+.form-control-calculator .error-control .error-label {
+  color: lightcoral;
+  font-size: 14px;
+  margin-top: 2.5px;
+}
+.form-control-calculator .input-container {
+  align-items: center;
+  background-color: hsl(185, 41%, 84%);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-bottom:10px;
+  padding: 10px;
+}
+.form-control-calculator .input-container:hover {
+  border: 1px solid hsl(183, 100%, 15%);
+}
+.form-control-calculator .input-container .input-logo {
+  height: 10px;
+  width: 10px;
+}
+.form-control-calculator .input-container .input-calculator {
+  background-color: transparent;
+  text-align: left;
+  border: none;
+  color: hsl(183, 100%, 15%);
+  font-size: 18px;
+  font-weight: 700;
+  height: 100%;
+  max-width: auto;
+  width: 120px;
+  outline: none;
+  width: 100%;
+}
+.form-control-calculator .grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 5px;
+}
+.form-control-calculator .grid-container .tip-button {
+  background-color: hsl(183, 100%, 15%);
+  border: none;
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 160px;
+}
+.form-control-calculator .grid-container .tip-button:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+.form-control-calculator .grid-container .custom-input {
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-end;
+  width: 160px;
+}
+.form-control-calculator .grid-container .custom-input .input-calculator {
+  background-color: transparent;
+  border: none;
+  color: hsl(183, 100%, 15%);
+  font-size: 18px;
+  height: 100%;
+  outline: none;
+  padding-left: 0px;
+  padding-right: 5px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+   .calculator-container {
+    align-items: center;
+    display: flex;
+    width: 900px;
+  }
+   .calculator-container .left-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 450px;
+  }
+   .calculator-container .right-container {
+    width: 450px;
+  }
+  .form-control-calculator {
+    width: 350px;
+  }
+}/*# sourceMappingURL=style.css.map */

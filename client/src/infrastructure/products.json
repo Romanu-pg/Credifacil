@@ -1,0 +1,85 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "Amazon Rainforest Project",
+            "description": "El proyecto hidroeléctrico Song Giang producirá suficiente energía para abastecer a 74.000 hogares de Vietnam y compensará aproximadamente 110.000 toneladas de emisiones de carbono al año. También creará directamente 250 puestos de trabajo durante la construcción de Song Giang 1 y mantendrá 50 puestos de trabajo a largo plazo durante la operación. También contribuirá directa e indirectamente al desarrollo económico de la región de otras maneras significativas. Los proyectos se construirán y mejorarán para cumplir con los estándares internacionales de calidad y con los estándares ambientales y sociales del Banco Mundial.",
+            "price": 1.8,
+            "certification": "Gold Standard",
+            "location": "Brazil",
+            "quantity": 100,
+            "brand": "PhoneTech",
+            "shipping": true,
+            "sku": "PT-X200",
+            "images": [{"image":"uploads/products/reinforest.jpg"}],
+            "created_at": "2024-08-10T12:30:20",
+            "updated_at": "2024-08-10T15:45:10",
+            "thumbnails": ""
+        },
+        {
+            "id": 2,
+            "name": "Solar Power Initiative",
+            "description": "El proyecto Solar Power Initiative en el desierto de Atacama en Chile generará 250 MW de energía solar, suficiente para abastecer a más de 100.000 hogares. Se estima que reducirá las emisiones de carbono en aproximadamente 300.000 toneladas por año. Además, el proyecto creará 500 empleos durante la construcción y 100 empleos permanentes durante la operación, contribuyendo significativamente al desarrollo económico de la región.",
+            "price": 2.5,
+            "certification": "Verra VCS",
+            "location": "Chile",
+            "quantity": 200,
+            "brand": "EcoEnergy",
+            "shipping": true,
+            "sku": "EE-SPI-250",
+            "images": [{"image":"uploads/products/solar panels.jpg"}],
+            "created_at": "2024-07-15T09:15:00",
+            "updated_at": "2024-07-15T12:45:00",
+            "thumbnails": ""
+        },
+        {
+            "id": 3,
+            "name": "Wind Energy Farm",
+            "description": "El proyecto de la granja eólica en Patagones, Argentina, instalará 60 turbinas eólicas con una capacidad total de 180 MW. Este proyecto proporcionará energía renovable a 85.000 hogares y compensará alrededor de 250.000 toneladas de emisiones de carbono anuales. Además, se crearán 400 empleos durante la fase de construcción y 80 empleos permanentes durante la operación de la granja eólica.",
+            "price": 3.2,
+            "certification": "Gold Standard",
+            "location": "Argentina",
+            "quantity": 150,
+            "brand": "WindTech",
+            "shipping": true,
+            "sku": "WT-WEF-180",
+            "images": [{"image":"uploads/products/energy.jpg"}],
+            "created_at": "2024-06-20T10:25:30",
+            "updated_at": "2024-06-20T14:55:45",
+            "thumbnails": ""
+        },
+        {
+            "id": 4,
+            "name": "Reforestation Initiative",
+            "description": "El proyecto de Reforestación en la Amazonia peruana tiene como objetivo plantar 1 millón de árboles nativos en un plazo de 5 años. Se espera que este proyecto capture alrededor de 200.000 toneladas de CO2 anualmente y proporcione hábitat para especies en peligro de extinción. Además, generará 300 empleos locales y apoyará a las comunidades indígenas en la gestión sostenible de los recursos naturales.",
+            "price": 2.0,
+            "certification": "Gold Standard",
+            "location": "Peru",
+            "quantity": 250,
+            "brand": "GreenEarth",
+            "shipping": true,
+            "sku": "GE-RI-1000",
+            "images": [{"image":"uploads/products/reforestation.jpg"}],
+            "created_at": "2024-09-01T11:40:50",
+            "updated_at": "2024-09-01T14:30:20",
+            "thumbnails": ""
+        },
+        {
+            "id": 5,
+            "name": "Hydroelectric Power Project",
+            "description": "El proyecto hidroeléctrico en el río Citarum, Indonesia, generará 100 MW de energía limpia y sostenible. Este proyecto reducirá las emisiones de carbono en aproximadamente 180.000 toneladas al año y proporcionará energía a 60.000 hogares. Se prevé la creación de 350 empleos durante la construcción y 70 empleos permanentes durante la operación.",
+            "price": 2.8,
+            "certification": "CDM",
+            "location": "Indonesia",
+            "quantity": 180,
+            "brand": "HydroPower Corp",
+            "shipping": true,
+            "sku": "HPC-CIT-100",
+            "images": [{"image":"uploads/products/hydroelectric.jpg"}],
+            "created_at": "2024-05-05T08:20:15",
+            "updated_at": "2024-05-05T11:35:30",
+            "thumbnails": ""
+        }
+        
+    ]
+}

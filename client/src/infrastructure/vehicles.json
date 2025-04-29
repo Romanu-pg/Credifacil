@@ -1,0 +1,53 @@
+{
+    "vehicles": [
+      {
+        "vehicle_type": "Sedan",
+        "fuel_type": "Gasoline",
+        "fuel_efficiency_km_l": 14.5,
+        "co2_emission_factor_kg_co2_l": 2.31
+      },
+      {
+        "vehicle_type": "SUV",
+        "fuel_type": "Diesel",
+        "fuel_efficiency_km_l": 10.5,
+        "co2_emission_factor_kg_co2_l": 2.68
+      },
+      {
+        "vehicle_type": "Hybrid",
+        "fuel_type": "Gasoline",
+        "fuel_efficiency_km_l": 20.0,
+        "co2_emission_factor_kg_co2_l": 2.31
+      },
+      {
+        "vehicle_type": "Electric",
+        "fuel_type": "Electric",
+        "fuel_efficiency_km_l": null,
+        "co2_emission_factor_kg_co2_l": 0
+      },
+      {
+        "vehicle_type": "Pickup Truck",
+        "fuel_type": "Gasoline",
+        "fuel_efficiency_km_l": 9.0,
+        "co2_emission_factor_kg_co2_l": 2.31
+      },
+      {
+        "vehicle_type": "Cargo Van",
+        "fuel_type": "Diesel",
+        "fuel_efficiency_km_l": 8.0,
+        "co2_emission_factor_kg_co2_l": 2.68
+      },
+      {
+        "vehicle_type": "Motorcycle",
+        "fuel_type": "Gasoline",
+        "fuel_efficiency_km_l": 25.0,
+        "co2_emission_factor_kg_co2_l": 2.31
+      },
+      {
+        "vehicle_type": "Bus",
+        "fuel_type": "Diesel",
+        "fuel_efficiency_km_l": 5.0,
+        "co2_emission_factor_kg_co2_l": 2.68
+      }
+    ]
+  }
+  

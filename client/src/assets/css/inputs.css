@@ -1,0 +1,16 @@
+/* Estilos para centrar el buscador y ajustar su tamaño del Hero*/
+.search-bar {
+    max-width: 60%;  /* Ocupa el 30% del ancho de la pantalla */
+    margin: 0 auto;  /* Centra horizontalmente */
+    text-align: center;
+  }
+  
+  .search-bar .form-control {
+    height: 40px;  /* Ajusta la altura del input */
+    font-size: 16px;  /* Ajusta el tamaño del texto */
+  }
+  
+  .search-bar .btn {
+    height: 40px;  /* Ajusta la altura del botón */
+    font-size: 16px;  /* Ajusta el tamaño del ícono */
+  }

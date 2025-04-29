@@ -1,0 +1,113 @@
+/* Reseteo de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo general del body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la ventana */
+    background-color: #f5f5f5; /* Fondo gris claro */
+}
+
+/* Caja de búsqueda */
+.search-box {
+    background-color: white; /* Fondo blanco */
+    padding: 30px;
+    border-radius: 20px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 1200px; /* Ancho máximo */
+    width: 100%; /* Ancho completo del contenedor */
+    display: flex;
+    justify-content: space-between; /* Espacios entre los elementos */
+    align-items: center; /* Centrado vertical de los elementos */
+    flex-wrap: wrap; /* Si no cabe en una línea, pasará a la siguiente */
+    gap: 20px;
+}
+
+/* Campo de búsqueda y filtros */
+.search-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+}
+
+.search-field label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.search-field input[type="search"], 
+.search-field input[type="date"], 
+.search-field input[type="range"], 
+.search-field select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 250px; /* Limitar el ancho de los inputs */
+    transition: border-color 0.3s ease;
+}
+
+.search-field input[type="range"] {
+    width: 100%;
+}
+
+.search-field output {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Botón de búsqueda */
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.btn-search {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evita que el botón se divida en varias líneas */
+}
+
+.btn-search:hover {
+    background-color: #0056b3;
+}
+
+.lupa-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .search-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-field, .search-button {
+        flex: none;
+        width: 100%;
+    }
+}
