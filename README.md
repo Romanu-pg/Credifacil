@@ -43,16 +43,15 @@ git clone https://github.com/tuusuario/credifacil.git
 cd credifacil
 ```
 
----
 
 ## ⚙️ Backend - Node.js + Express
 
 
-```
+
 
 El servidor estará disponible en: `http://localhost:5000`
 
----
+
 
 ## 🌐 Frontend - React
 
