@@ -29,9 +29,11 @@ Credifacil es una aplicación financiera full-stack que permite a los usuarios s
 
 Asegúrate de tener instalado:
 
-- **Node.js 18.0.0+**
+- **Node.js**
 - **SQL Server Developer Edition**
 - **Git**
+- **Gestor de paquetes npm**
+- **React**
 
 ---
 
