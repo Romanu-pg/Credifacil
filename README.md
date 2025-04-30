@@ -47,23 +47,7 @@ cd credifacil
 
 ## ⚙️ Backend - Node.js + Express
 
-### 1. Configura las variables de entorno
-Copia el archivo `.env.example` a `.env` y edítalo con tus credenciales:
-```bash
-cp .env.example .env
-# Edita .env con tus configuraciones
-```
 
-### 2. Instala las dependencias
-```bash
-cd backend
-npm install
-```
-
-### 3. Ejecuta las migraciones y corre el servidor
-```bash
-npm run migrate
-npm run dev
 ```
 
 El servidor estará disponible en: `http://localhost:5000`
@@ -72,18 +56,23 @@ El servidor estará disponible en: `http://localhost:5000`
 
 ## 🌐 Frontend - React
 
-### 1. Instala las dependencias
+
+Posiciónate en la carpeta del cliente:
+
 ```bash
-cd frontend
+cd client
+```
+
+Instala las dependencias:
+
+```bash
 npm install
 ```
 
-### 2. Corre el servidor de desarrollo
+Ejecuta la aplicación:
 ```bash
-npm run dev
+npm start
 ```
-
-El frontend estará disponible en: `http://localhost:5173`
 
 ---
 
