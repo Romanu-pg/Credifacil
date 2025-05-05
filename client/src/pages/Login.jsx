@@ -1,138 +1,108 @@
 import React from "react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { motion } from 'framer-motion';
+import '../assets/css/login.css';
+import { useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
-import { MdEmail } from "react-icons/md";
-import { FiLogIn } from 'react-icons/fi'
-import { RiLockPasswordFill } from "react-icons/ri";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../store/actions/auth-actions';
-import TheSpinner from "../layout/TheSpinner";
+ 
 import { useNavigate } from 'react-router-dom';
 
 
 
-const containerVariants = {
-  hidden: {
-    opacity: 0
-  },
-  visible: {
-    opacity: 1,
-    transition: { duration: .3 }
-  },
-  exit: {
-    x: '-100vw',
-    transition: { ease: 'easeInOut' }
+export default function LoginPage() {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState("")git 
+  const [password, setPassword] = useState("")
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("Login attempt with:", { email, password })
+    // Simulamos un inicio de sesión exitoso
+    navigate("/dashboard")
   }
-};
 
-
-
-
-const Login = () => {
-  const navigate = useNavigate(); // Obtén el hook useNavigate
-  const dispatch = useDispatch();
-  const loading = useSelector((state) => state.ui.loginLoading);
-
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema: Yup.object({
-      email: Yup.string().email("Invalid email address").required("Required"),
-      password: Yup.string().required("Required"),
-    }),
-    onSubmit: async (values) => {
-      
-      try {
-        await dispatch(login(values));
-        navigate('/admin/dashboard');
-      } catch (error) {
-        console.log(error);
-      }
-      
-    },
-  });
+  const handleGoogleLogin = () => {
+    console.log("Login with Google")
+    navigate("/dashboard")
+  }
 
   return (
-    <motion.div className="w-[80%] mx-auto mt-40 mb-52"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-    >
-      <div className="w-[320px] sm:w-[400px] rounded shadow-xl border-2 border-solid px-4 sm:px-8 py-20 mx-auto">
-        <h2 className="text-3xl uppercase tracking-wider font-bold text-center mb-12 select-none">
-          <span className="text-primary">tech</span>
-          <span className="text-secondary-200">shop</span>
-        </h2>
-        {loading ? <TheSpinner /> : 
-        <form onSubmit={formik.handleSubmit}>
-          <div className="flex flex-col space-y-1 mb-4">
-            <label htmlFor="email" className="font-semibold tracking-wider">
-              Email
-            </label>
-            <div className="flex py-1">
-              <span className="flex items-center justify-center border border-gray-300 border-r-0 py-2 px-3 bg-gray-300  text-black">
-                <MdEmail />
-              </span>
+    <div className="auth-page">
+      <div className="auth-container">
+        <div className="auth-logo">
+          <div className="logo-circle">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20,50 Q40,20 60,50 T100,50" fill="none" stroke="#ccc" strokeWidth="2" />
+            </svg>
+          </div>
+        </div>
+        <div className="auth-form-container">
+          <div className="auth-header">
+            <button className="back-button" onClick={() => navigate("/")}>
+              <FaArrowLeft /> Go Back
+            </button>
+            <h1>Welcome!</h1>
+            <p>Please sign in your account.</p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="auth-form">
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
               <input
-                type="email"
-                name="email"
                 id="email"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
-                className="form-input rounded-r w-full"
-                placeholder="example@domain.com"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                required
               />
             </div>
-            {formik.touched.email && formik.errors.email && (
-              <p className="text-xs font-semibold text-red-600">
-                {formik.errors.email}
-              </p>
-            )}
-          </div>
-          <div className="flex flex-col space-y-1 mb-4">
-            <label htmlFor="password" className="font-semibold tracking-wider">
-              Password
-            </label>
-            <div className="flex py-1">
-              <span className="flex items-center justify-center border border-gray-300 border-r-0 py-2 px-3 bg-gray-300  text-black">
-                <RiLockPasswordFill />
-              </span>
+
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
               <input
-                type="password"
-                name="password"
                 id="password"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.password}
-                className="form-input rounded-r w-full"
-                placeholder="********"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
               />
             </div>
-            {formik.touched.password && formik.errors.password && (
-              <p className="text-xs text-red-600">{formik.errors.password}</p>
-            )}
-          </div>
-          <hr />
-            <button
-              type="submit"
-              className="px-4 py-2 block mt-3 ml-auto text-primary border border-primary hover:text-white hover:bg-primary rounded-md"
-            >
-              <span className="inline-flex justify-items-center mr-1"><FiLogIn /> </span>
+
+            <div className="forgot-password">
+              <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit" className="auth-button">
               Login
             </button>
-        </form>
-        }
-        <p className="text-center mt-6">Not registered? <Link to='/register' className="text-primary">Create an account</Link> </p>
-      </div>
-    </motion.div>
-  );
-};
 
-export default Login;
+            <div className="divider">
+              <span>Or continue with</span>
+            </div>
+
+            <button type="button" className="google-button" onClick={handleGoogleLogin}>
+              <FcGoogle size={20} /> Google
+            </button>
+
+            <div className="auth-footer">
+              <p>
+                Don't have an account?{" "}
+                <a
+                  href="/register"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    navigate("/register")
+                  }}
+                >
+                  Sign up
+                </a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  )
+}

@@ -41,15 +41,16 @@ const App = () => {
   const isAdmin = useSelector((state) => state.auth.isAdmin);
   const isUser = useSelector((state) => state.auth.isUser);
   // const products = useSelector((state) => state.products.products);
+  const hideLayoutRoutes = ['/login', '/register'];
+  const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
-
   return (
     <>
-      {!isAdmin && <MainNavigation />}
+      {!shouldHideLayout && !isAdmin && <MainNavigation />}
       <AnimatePresence exitBeforeEnter >
 
         <Routes location={location} key={location.pathname}>
@@ -96,7 +97,7 @@ const App = () => {
         </Routes>
 
       </AnimatePresence>
-      {!isAdmin && <Footer />}
+      {!shouldHideLayout && !isAdmin && <Footer />}
     </>
   );
 }
