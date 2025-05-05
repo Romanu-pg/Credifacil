@@ -41,7 +41,7 @@ Asegúrate de tener instalado:
 
 ### 1. Clona el repositorio
 ```bash
-git clone https://github.com/tuusuario/credifacil.git
+git clone https://github.com/Romanu-pg/Credifacil
 cd credifacil
 ```
 
