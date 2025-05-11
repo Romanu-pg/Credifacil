@@ -14,7 +14,6 @@ const connectToDatabase = async () => {
 
 // Función para ejecutar una consulta SQL
 const executeQuery = async (query, params, conf) => {
-	const pool = new sql.ConnectionPool(conf);
 	try {
 
         const pool = await connectToDatabase();

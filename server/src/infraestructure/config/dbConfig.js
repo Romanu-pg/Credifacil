@@ -1,12 +1,15 @@
+require('dotenv').config();
+
 const config = {
-    user: 'your-username',
-    password: 'your-password',
-    server: 'your-server-name', // Puede ser 'localhost' si trabajas localmente
-    database: 'your-database-name',
-    options: {
-        encrypt: true, // Para conexiones seguras, útil si usas Azure
-        trustServerCertificate: true // Puede ser necesario si estás trabajando localmente
-    }
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  server: process.env.DB_SERVER,
+  database: process.env.DB_DATABASE,
+  port: parseInt(process.env.DB_PORT),
+  options: {
+    encrypt: process.env.DB_ENCRYPT === 'true', // true para Azure, false para local
+    trustServerCertificate: true // necesario si no tienes un certificado SSL
+  }
 };
 
 module.exports = config;

@@ -1,19 +1,22 @@
-const { password } = require('../../config/dbConfig');
 const db = require('../../config/dbOperations');
 
 async function login(body) {
+    const query = 'SELECT * FROM Users WHERE email = @email AND password = @password';
 
-    let query = 'SELECT * FROM Users WHERE email = @email AND password = @password';
-    
-    var params = {
-        email:  body.email || '' ,          
-        password: body.password || ''      
+    const params = {
+        email: body.email || '',
+        password: body.password || ''
+    };
+
+    try {
+        const result = await db.executeQuery(query, params);
+        return result;
+    } catch (error) {
+        console.error('Error en login:', error);
+        throw error;
     }
-
-    var result = db.executeQuery(query, params);
-    return result;  // Devuelve el primer usuario encontrado
 }
 
 module.exports = {
-  findUserByUsername,
+    login
 };
