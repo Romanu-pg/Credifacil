@@ -134,4 +134,4 @@ npm install nueva-dependencia
 
 ## 📄 Licencia
 
-Este proyecto está licenciado bajo licencia. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está licenciado. Consulta el archivo [LICENSE](LICENSE) para más detalles.
