@@ -1,30 +1,38 @@
 import React from "react";
-import '../assets/css/login.css';
-import { useState } from "react";
-import { FaArrowLeft } from "react-icons/fa";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../store/actions/auth-actions';
+import { useNavigate, Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-
- 
-import { useNavigate } from 'react-router-dom';
-
-
+import { FaArrowLeft } from "react-icons/fa";
+import TheSpinner from "../layout/TheSpinner";
+import '../assets/css/login.css';
 
 export default function LoginPage() {
-  const navigate = useNavigate()
-  const [email, setEmail] = useState("")git 
-  const [password, setPassword] = useState("")
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const loading = useSelector((state) => state.ui.loginLoading);
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("Login attempt with:", { email, password })
-    // Simulamos un inicio de sesión exitoso
-    navigate("/dashboard")
-  }
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    onSubmit: async (values) => {
+      try {
+        await dispatch(login(values));
+        navigate("/dashboard");
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
 
   const handleGoogleLogin = () => {
-    console.log("Login with Google")
-    navigate("/dashboard")
-  }
+    console.log("Login con Google (no implementado)");
+    navigate("/dashboard");
+  };
 
   return (
     <div className="auth-page">
@@ -39,70 +47,73 @@ export default function LoginPage() {
         <div className="auth-form-container">
           <div className="auth-header">
             <button className="back-button" onClick={() => navigate("/")}>
-              <FaArrowLeft /> Go Back
+              <FaArrowLeft /> Volver
             </button>
-            <h1>Welcome!</h1>
-            <p>Please sign in your account.</p>
+            <h1>¡Bienvenido!</h1>
+            <p>Inicia sesión con tu cuenta.</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="auth-form">
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-                required
-              />
-            </div>
+          {loading ? <TheSpinner /> : (
+            <form onSubmit={formik.handleSubmit} className="auth-form">
+              <div className="form-group">
+                <label htmlFor="email">Correo electrónico</label>
+                
+                  
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
+                    placeholder="example@domain.com"
+                    required
+                  />
+                
+                {formik.touched.email && formik.errors.email && (
+                  <p className="error-message">{formik.errors.email}</p>
+                )}
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                required
-              />
-            </div>
+              <div className="form-group">
+                <label htmlFor="password">Contraseña</label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.password}
+                    placeholder="Password"
+                    required
+                  />
+                {formik.touched.password && formik.errors.password && (
+                  <p className="error-message">{formik.errors.password}</p>
+                )}
+              </div>
 
-            <div className="forgot-password">
-              <a href="#">Forgot Password?</a>
-            </div>
+              <div className="forgot-password">
+                <a href="#">¿Olvidaste tu contraseña?</a>
+              </div>
 
-            <button type="submit" className="auth-button">
-              Login
-            </button>
+              
+              <button type="submit" className="auth-button">
+                Iniciar sesión
+              </button>
 
-            <div className="divider">
-              <span>Or continue with</span>
-            </div>
+              <div className="divider"><span>o continúa con</span></div>
 
-            <button type="button" className="google-button" onClick={handleGoogleLogin}>
-              <FcGoogle size={20} /> Google
-            </button>
+              <button type="button" className="google-button" onClick={handleGoogleLogin}>
+                <FcGoogle size={20} /> Google
+              </button>
 
-            <div className="auth-footer">
-              <p>
-                Don't have an account?{" "}
-                <a
-                  href="/register"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    navigate("/register")
-                  }}
-                >
-                  Sign up
-                </a>
-              </p>
-            </div>
-          </form>
+              <div className="auth-footer">
+                <p>¿No tienes cuenta? <Link to="/register">Regístrate</Link></p>
+              </div>
+            </form>
+          )}
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -51,8 +51,24 @@ cd credifacil
 
 
 
-El servidor estará disponible en: `http://localhost:5000`
+El servidor estará disponible en: `http://localhost:3001`
 
+Posiciónate en la carpeta del servidor:
+
+```bash
+cd server
+```
+
+Instala las dependencias:
+
+```bash
+npm install
+```
+
+Ejecuta la aplicación:
+```bash
+npm start
+```
 
 
 ## 🌐 Frontend - React

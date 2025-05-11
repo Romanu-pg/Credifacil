@@ -10,6 +10,7 @@ const Hero = () => {
 
    return (
       <div className="banner_bg_main">
+         {/*Sección de búsqueda comentada
          <div className="header_section">
             <div className="container">
                <div className="containt_main">
@@ -32,7 +33,7 @@ const Hero = () => {
                   </div>
                </div>
             </div>
-         </div>
+         </div>*/}
 
          {/* Carrusel con react-bootstrap */}
          <div className="banner_section layout_padding">
