@@ -41,7 +41,7 @@ Asegúrate de tener instalado:
 
 ### 1. Clona el repositorio
 ```bash
-git clone https://github.com/tuusuario/credifacil.git
+git clone https://github.com/Romanu-pg/Credifacil
 cd credifacil
 ```
 
@@ -150,4 +150,4 @@ npm install nueva-dependencia
 
 ## 📄 Licencia
 
-Este proyecto está licenciado bajo la licencia TEC. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está licenciado. Consulta el archivo [LICENSE](LICENSE) para más detalles.
