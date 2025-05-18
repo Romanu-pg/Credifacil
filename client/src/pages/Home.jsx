@@ -1,13 +1,10 @@
 import React from 'react';
-
 import { motion } from 'framer-motion';
 
-import Hero from "../components/home/Hero";
-import Overview from '../components/home/Overview';
-import FeaturedProducts from '../components/home/FeaturedProducts';
-import TheServices from '../components/home/TheServices';
-import TheContact from '../components/home/TheContact';
-
+import Hero from '../components/home/Hero';
+import InterestRates from '../components/home/InterestRates';
+import Partners from '../components/home/Partners';
+import FooterSection from '../components/home/FooterSection';
 
 const containerVariants = {
   hidden: {
@@ -21,8 +18,7 @@ const containerVariants = {
     x: '-100vw',
     transition: { ease: 'easeInOut' }
   }
-}
-
+};
 
 const Home = () => {
   return (
@@ -33,10 +29,9 @@ const Home = () => {
       exit="exit"
     >
       <Hero />
-      <Overview />
-      <FeaturedProducts />
-      <TheServices />
-      <TheContact />
+      <InterestRates />
+      <Partners />
+      <FooterSection />
     </motion.main>
   );
 };

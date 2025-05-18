@@ -231,7 +231,9 @@ button {
     background-position: center bottom, center bottom; /* Posiciona la imagen y el gradiente correctamente */
     height: auto;
     margin-bottom: 40px;
+    
 }
+
 
 .banner_bg_main {
     width: 100%;
@@ -526,7 +528,19 @@ a:hover {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
+    padding-top: 5%;
 }
+
+
+.banner_text {
+    width: 100%;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
 
 .banner_taital_products {
     width: 100%;

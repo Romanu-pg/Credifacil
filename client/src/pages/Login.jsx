@@ -6,6 +6,7 @@ import { login } from '../store/actions/auth-actions';
 import { useNavigate, Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaArrowLeft } from "react-icons/fa";
+import Logo from '../assets/images/Credifacil.png';
 import TheSpinner from "../layout/TheSpinner";
 import '../assets/css/login.css';
 
@@ -38,11 +39,7 @@ export default function LoginPage() {
     <div className="auth-page">
       <div className="auth-container">
         <div className="auth-logo">
-          <div className="logo-circle">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20,50 Q40,20 60,50 T100,50" fill="none" stroke="#ccc" strokeWidth="2" />
-            </svg>
-          </div>
+            <img src={Logo} alt="" style={{ width: '200px', height: 'auto' }} />           
         </div>
         <div className="auth-form-container">
           <div className="auth-header">

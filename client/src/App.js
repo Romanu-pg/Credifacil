@@ -15,7 +15,6 @@ import Register from "./pages/Register";
 import NotFound from './pages/NotFound';
 import Calculator from './pages/Calculator';
 import MainNavigation from "./layout/MainNavigation";
-import Footer from "./layout/Footer";
 import Dashboard from "./pages/dashboard/Dashboard";
 import TheProducts from "./components/dashboard/TheProducts";
 import AddProduct from "./components/dashboard/AddProduct";
@@ -97,7 +96,7 @@ const App = () => {
         </Routes>
 
       </AnimatePresence>
-      {!shouldHideLayout && !isAdmin && <Footer />}
+      {!shouldHideLayout && !isAdmin}
     </>
   );
 }

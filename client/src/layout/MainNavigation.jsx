@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 
 import HambergurMenu from "../assets/HambergurMenu.svg";
-import Logo from '../assets/images/ECO-1.png';
+import Logo from '../assets/images/Credifacil.png';
 import NavCartButton from "../components/cart/NavCartButton";
 import { logout } from "../store/actions/auth-actions";
 
